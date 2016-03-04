@@ -1,0 +1,147 @@
+.ng-enter {
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+    opacity: 0;
+}
+.ng-enter-active {
+    opacity: 1;
+}  
+
+.sigil{
+    height: 25px;
+    width: 25px;    
+    background-position: center ;
+    background-repeat: no-repeat;    
+    padding: 0;
+    margin: 0;
+    display: inline-block;      
+    background-size: 25px 25px;      
+    background-size: contain;    
+}
+
+.baratheon {
+    background-image: url('../imagens/icon01.png');           
+}
+
+.lannister { 
+    background-image: url('../imagens/icon03.png');
+}
+
+.baratheonLannister {
+    background-image: url('../imagens/icon02.png');
+}
+
+.tyrell {
+    background-image: url('../imagens/icon04.png');
+}
+
+.greyjoy {
+    background-image: url('../imagens/icon05.png');
+}
+
+.martell {
+    background-image: url('../imagens/icon06.png');
+}
+
+.arryn {
+    background-image: url('../imagens/icon07.png');
+}
+
+.tully {
+    background-image: url('../imagens/icon08.png');
+}
+
+.baratheonFire {
+    background-image: url('../imagens/icon09.png');
+}
+
+.stark {
+    background-image: url('../imagens/icon10.png');
+}
+
+.frey {
+    background-image: url('../imagens/icon11.png');
+}
+
+.bigBaratheon {
+    background-position: center;
+    background-repeat: no-repeat;    
+    padding: 0;
+    height: 190px;
+    width: 190px;
+    display: inline-block;    
+    background: url('housesIcon.jpg') 0 0;    
+}
+
+.bigBaratheonLanister {
+    background-position: center;
+    background-repeat: no-repeat;    
+    padding: 0;    
+    height: 190px;
+    width: 190px;
+    display: inline-block;    
+    background: url('housesIcon.jpg') -190px 0;
+}
+
+.bigLannister {
+    background-position: center;
+    background-repeat: no-repeat;    
+    padding: 0;    
+    height: 190px;
+    width: 190px;
+    display: inline-block;    
+    background: url('housesIcon.jpg') -380px 0;
+}
+
+.bigHighGarden {
+    background-position: center;
+    background-repeat: no-repeat;    
+    padding: 0;    
+    height: 190px;
+    width: 187px;
+    display: inline-block;    
+    background: url('housesIcon.jpg') -570px 0;
+}
+
+.jumbotron {
+	text-align: center;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+}
+
+.banner {
+	text-align: center;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+}
+
+.table {
+	margin-top: 20px;
+}
+
+th {
+    text-align: center;
+}
+
+.form-control {
+	margin-bottom: 5px;
+}
+
+.selecionado {
+	background-color: yellow;
+}
+
+.negrito {
+	font-weight: bold;
+}
+
+hr {
+	border-color: #999;
+}

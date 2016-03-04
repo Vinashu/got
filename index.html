@@ -1,0 +1,80 @@
+<!doctype html>
+<html ng-app="GoT">
+
+<head>
+    <title>The Game of Thrones</title>
+    <meta charset="UTF-8" />
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-animate.js"></script>
+    <script src="js/got.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/got.css">
+</head>
+
+<body ng-controller="GoTCtrl">
+    <div class="container-fluid">
+        <div class='row-fluid'>
+            <div class="hidden-xs col-sm-2 col-md-3 col-lg-3"></div>
+            <div class="jumbotron col-xs-10 col-sm-8 col-md-5 col-lg-4">
+                <div ng-if="army">
+                    <h3>Game of Thrones Army</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th><a href="" ng-click="ordenarPor('house.name')">House</a></th>
+                                <th><a href="" ng-click="ordenarPor('name')">Soldier</a></th>
+                                <th></th>                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="soldier in army | filter:searchText | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao | limitTo:15">
+                                <td align=middle>
+                                    <span class='sigil' ng-class="soldier.house.name | lowercase"></span>
+                                </td>
+                                <td>
+                                    {{soldier.name}}
+                                </td>
+                                <td>
+                                    <input type="checkbox" ng-model="soldier.selecionado" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <form name="soldierForm" id="soldierForm">
+                        <label for='soldier'>Name:</label>
+                        <input type="text" ng-model="man.name" class="form-control" ng-required="true" ng-minlength="5" name="nome" />
+                        <div ng-show="soldierForm.nome.$error.required && soldierForm.nome.$dirty" class="alert alert-danger">
+                            Por favor, preenchar o nome!
+                        </div>
+                        <div ng-show="soldierForm.nome.$error.minlength" class="alert alert-danger">
+                            Campo nome deve ter no mínimo 5 caracteres.
+                        </div>                            
+                        <span ng-if="man.house.name" class="sigil" ng-class="man.house.name | lowercase"></span>
+                        <label for="house">House:</label>
+                        <select name="house" id="house" ng-model="man.house" class="form-control" ng-options="house.name for house in houses track by house.icon"
+                        ng-model="data.selectedOption" ng-required="true" >
+                        </select>
+                        <button class="btn btn-primary btn-block" ng-click="alistar(man)" ng-disabled="soldierForm.$invalid">Enlist</button>
+                        <br>
+		                <button class="btn btn-danger btn-block" ng-click="liberarSoldados(army)" ng-hide="!isSoldadoSelecionado(army)">Liberar Soldados</button>                        
+                        <br>
+                        <label>Search by House:
+                            <input ng-model="searchText" placeholder="Type the name of a House...">
+                        </label>
+                    </form>
+                    <br />
+                </div>           
+            </div>
+            <div class="banner col-xs-2 col-sm-2 col-md-1 col-lg-1">
+                <span>          
+                    <img src="{{man.house.banner}}" />           
+                </span>
+            </div>
+            <div class="hidden-xs hidden-sm col-md-3 col-lg-4"></div>
+        </div>
+    </div>
+</body>
+
+</html>
