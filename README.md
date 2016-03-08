@@ -11,3 +11,12 @@ Tecnologias utilizadas:
 - PHP
 - Angular.js
 - JavaScript
+
+Arquivo got.sql traz script para criação de banco de dados povoado para testar a aplicação.
+
+Configurar os atributos da classe Banco (classBanco.php) para conexão com o banco de dados.
+
+Opcionalmente pode-se trabalhar sem banco de dados alternando para true as seguintes variáveis no arquivo js/got.js
+
+    $scope.localHouses = true;
+    $scope.localArmy = true;    
